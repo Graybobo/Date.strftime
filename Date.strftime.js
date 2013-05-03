@@ -37,6 +37,21 @@ if( typeof module != 'undefined' && module.exports ){
 					D: function( date ){
 						return Fill_zero( date.getDate() );
 					},
+
+					// Hour
+					H: function( date ){
+						return Fill_zero( date.getHours() );
+					},
+					
+					// Minute
+					m: function( date ){
+						return Fill_zero( date.getMinutes() );
+					},
+					
+					// Second
+					s: function( date ){
+						return Fill_zero( date.getSeconds() );
+					},
 										
 					// Shorthand one [ like 2013-05-03 ]
 					O: '%Y-%M-%D',
@@ -46,6 +61,9 @@ if( typeof module != 'undefined' && module.exports ){
 					
 					// Shorthand three [ like 2013年05月03日 ]
 					C: '%Y年%M月%D日',
+					
+					// Shorthand four [ like 2013-05-03 22:34:09 ]
+					F: '%Y-%M-%D %H:%m:%s'
 														
 				};
 					
