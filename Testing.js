@@ -14,3 +14,5 @@ console.log( 'Format two: ' + TestingDate.strftime( Date.Formats.T ) );
 console.log( 'Format three: ' + TestingDate.strftime( Date.Formats.C ) );
 // Shorthand format four [ like 2013-05-03 22:56:23 ]
 console.log( 'Format four: ' + TestingDate.strftime( Date.Formats.F ) );
+// Shorthand format five [ like 2013-05-04 星期六 ]
+console.log( 'Format five: ' + TestingDate.strftime( Date.Formats.W ) );
