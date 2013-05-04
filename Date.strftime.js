@@ -14,7 +14,10 @@ if( typeof module != 'undefined' && module.exports ){
 			
 			DATE.prototype.strftime = (function(){
 				
-				var Regexp = /%([a-zA-Z])/g;
+				var Regexp = /%([a-zA-Z])/g,
+				
+				    // Weeks adapter
+				    Weeks = [ '星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六' ];
 									
 				// Date Formats
 				DATE.Formats = {
@@ -52,6 +55,12 @@ if( typeof module != 'undefined' && module.exports ){
 					s: function( date ){
 						return Fill_zero( date.getSeconds() );
 					},
+					
+					// Weeks
+					w: function( date ){
+						var i = Number( date.getDay() );
+						return Weeks[i];
+					},
 										
 					// Shorthand one [ like 2013-05-03 ]
 					O: '%Y-%M-%D',
@@ -63,7 +72,10 @@ if( typeof module != 'undefined' && module.exports ){
 					C: '%Y年%M月%D日',
 					
 					// Shorthand four [ like 2013-05-03 22:34:09 ]
-					F: '%Y-%M-%D %H:%m:%s'
+					F: '%Y-%M-%D %H:%m:%s',
+					
+					// Shorthand five [ like 2013-05-04 星期六 ]
+					W: '%Y-%M-%D %w'
 														
 				};
 					
