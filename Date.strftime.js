@@ -14,10 +14,15 @@ if( typeof module != 'undefined' && module.exports ){
 			
 			DATE.prototype.strftime = (function(){
 				
-				var Regexp = /%([a-zA-Z])/g,
-				
-				    // Weeks adapter
-				    Weeks = [ '星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六' ];
+				var
+					// Formats match regexp
+					Regexp = /%([a-zA-Z])/g,
+					
+					// Weeks adapter
+					Weeks = {
+						zh: [ '星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六' ],
+						en: [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ]
+					};
 									
 				// Date Formats
 				DATE.Formats = {
@@ -56,26 +61,35 @@ if( typeof module != 'undefined' && module.exports ){
 						return Fill_zero( date.getSeconds() );
 					},
 					
-					// Weeks
+					// Weeks ( zh-CN )
 					w: function( date ){
 						var i = Number( date.getDay() );
-						return Weeks[i];
+						return Weeks.zh[i];
+					},
+					
+					// Weeks ( en )
+					e: function( date ){
+						var i = Number( date.getDay() );
+						return Weeks.en[i];
 					},
 										
-					// Shorthand one [ like 2013-05-03 ]
+					// Shorthand one: like [ 2013-05-03 ]
 					O: '%Y-%M-%D',
 					
-					// Shorthand two [ like 05/03/13 ]
+					// Shorthand two: like [ 05/03/13 ]
 					T: '%M/%D/%y',
 					
-					// Shorthand three [ like 2013年05月03日 ]
+					// Shorthand three: like [ 2013年05月03日 ]
 					C: '%Y年%M月%D日',
 					
-					// Shorthand four [ like 2013-05-03 22:34:09 ]
+					// Shorthand four: like [ 2013-05-03 22:34:09 ]
 					F: '%Y-%M-%D %H:%m:%s',
 					
-					// Shorthand five [ like 2013-05-04 星期六 ]
-					W: '%Y-%M-%D %w'
+					// Shorthand five: like [ 2013-05-04 星期六 ]
+					W: '%Y-%M-%D %w',
+					
+					// Shorthand six: like [ 2013-07-17 Wednesday ]
+					E: '%Y-%M-%D %e'
 														
 				};
 					
