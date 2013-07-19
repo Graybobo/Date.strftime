@@ -31,6 +31,7 @@ if( typeof module != 'undefined' && module.exports ){
 					Y: function( date ){
 						return date.getFullYear();
 					},
+					
 					// Year short written
 					y: function( date ){
 						return Fill_zero( date.getYear() % 100 );
@@ -66,6 +67,7 @@ if( typeof module != 'undefined' && module.exports ){
 						var i = Number( date.getDay() );
 						return Weeks.zh[i];
 					},
+					
 					// Weeks ( en )
 					e: function( date ){
 						var i = Number( date.getDay() );
@@ -91,7 +93,8 @@ if( typeof module != 'undefined' && module.exports ){
 					E: '%Y-%M-%D %e'
 														
 				};
-					
+				
+				// Fill Zero	
 				function Fill_zero( n ){
 					return ( 10 > n ) ? ( '0' + n ) : ( '' + n );
 				}
