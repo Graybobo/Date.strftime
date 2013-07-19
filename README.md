@@ -3,7 +3,7 @@ Date.strftime
 
 A simple Javascript Date object extensions( strftime ) for Node.js( module.exports ).
 
-## 使用方法( Usage ):
+### 使用方法( Usage ):
 
   将 Date.strftime.js 放到您的项目中，存放目录无特殊要求；然后再在需要使用的文件中 require Date.strftime.js 即可。
 
@@ -18,7 +18,7 @@ A simple Javascript Date object extensions( strftime ) for Node.js( module.expor
   ......
   ```
 
-## 格式标记( Format symbol )
+### 格式标记( Format symbol )
 
   - `%Y` 年( Year ) ---- [ 2013 ]
   - `%y` 年简写( Year short written ) ---- [ 13 ]
@@ -30,7 +30,7 @@ A simple Javascript Date object extensions( strftime ) for Node.js( module.expor
   - `%w` 星期 - 中文( Weeks - zh-CN ) ---- [ 星期四 ]
   - `%e` 星期 - 英文( Weeks - en ) ---- [ Thursday ]
 
-## 速记格式( Shorthand format ):
+### 速记格式( Shorthand format ):
 
   - `Date.Formats.O` ---- [ %Y-%M-%D ] ( 2013-07-19 )
   - `Date.Formats.T` ---- [ %M/%D/%y ] ( 07/19/13 )
