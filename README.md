@@ -3,45 +3,40 @@ Date.strftime
 
 A simple Javascript Date object extensions( strftime ) for Node.js( module.exports ).
 
-**Use Guides( 使用指南 ):**
+## 使用方法( Usage ):
 
-将 Date.strftime.js 放到您的项目中，存放目录无特殊要求；然后再在需要使用的文件中 require Date.strftime.js 即可。
+  将 Date.strftime.js 放到您的项目中，存放目录无特殊要求；然后再在需要使用的文件中 require Date.strftime.js 即可。
 
-例：
+  Example:
 
-```javascript
-......
-require("./Date.strftime");
-......
+  ```javascript
+  ......
+  require("./Date.strftime");
+  
+  var DATE = new Date();
+  console.log( DATE.strftime( Date.Formats.F );
+  ......
+  ```
 
-var DATE = new Date();
-console.log( DATE.strftime( Date.Formats.F );
-// 2013-05-06 06:37:23
-```
+## 格式标记( Format symbol )
 
-**Supported Formats( 支持格式-速记 ):**
+  - `%Y` 年( Year ) ---- [ 2013 ]
+  - `%y` 年简写( Year short written ) ---- [ 13 ]
+  - `%M` 月( Month ) ---- [ 07 ]
+  - `%D` 日( Date ) ---- [ 19 ]
+  - `%H` 时( Hour ) ---- [ 22 ]
+  - `%m` 分( Minute ) ---- [ 21 ]
+  - `%s` 秒( Second ) ---- [ 21 ]
+  - `%w` 星期 - 中文( Weeks - zh-CN ) ---- [ 星期四 ]
+  - `%e` 星期 - 英文( Weeks - en ) ---- [ Thursday ]
 
-```javascript
-Date.Formats.O    // [ '%Y-%M-%D' ]         2013-05-06
-Date.Formats.T    // [ %M/%D/%y ]           05/06/13 ( 年份为2位简写 )
-Date.Formats.C    // [ %Y年%M月%D日 ]        2013年05月06日
-Date.Formats.F    // [ %Y-%M-%D %H:%m:%s ]  2013-05-06 06:40:17
-Date.Formats.O    // [ %Y-%M-%D %w ]        2013-05-06 星期一
-```
+## 速记格式( Shorthand format ):
 
-目前未加入 Weeks 的 E 文格式[ Sunday, Monday, Tuesday, ...  ] 需要使用的话可自行添加进去。
+  - `Date.Formats.O` ---- [ %Y-%M-%D ] ( 2013-07-19 )
+  - `Date.Formats.T` ---- [ %M/%D/%y ] ( 07/19/13 )
+  - `Date.Formats.C` ---- [ %Y年%M月%D日 ] ( 2013年07月19日 )
+  - `Date.Formats.F` ---- [ %Y-%M-%D %H:%m:%s ] ( 2013-07-19 22:34:09 )
+  - `Date.Formats.W` ---- [ %Y-%M-%D %w ] ( 2013-07-19 星期四 )
+  - `Date.Formats.E` ---- [ %Y-%M-%D %e ] ( 2013-07-19 Thursday )
 
-以上 5 种格式如果不够用或不是您想要的格式的话，可自行扩展或重新拼装适合自己的格式。
-
-格式符号说明：
-
-```javascript
-%Y  ----  年份( 完整4位 )  [ 2013 ]
-%y  ----  年份( 简写2位 )  [ 13 ]
-%M  ----  月份( 2位 )  [ 05 ]
-%D  ----  日期( 2位 )  [ 06 ]
-%H  ----  时( 2位 )  [ 06 ]
-%m  ----  分( 2位 )  [ 48 ]
-%s  ----  秒( 2位 )  [ 09 ]
-%w  ----  星期( 中文 )  [ 星期一 ]
-```
+( 注：以上格式如果不能满足您的需求，可根据 格式标记 符号自由拼装适合自己的格式，您也可以尝试扩展您自己想要的格式标记符号或速记格式。)
