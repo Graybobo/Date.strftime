@@ -32,11 +32,11 @@ A simple Javascript Date object extensions( strftime ) for Node.js( module.expor
 
 ### 速记格式( Shorthand format ):
 
-  - `Date.Formats.O` ---- [ %Y-%M-%D ] ( 2013-07-19 )
-  - `Date.Formats.T` ---- [ %M/%D/%y ] ( 07/19/13 )
-  - `Date.Formats.C` ---- [ %Y年%M月%D日 ] ( 2013年07月19日 )
-  - `Date.Formats.F` ---- [ %Y-%M-%D %H:%m:%s ] ( 2013-07-19 22:34:09 )
-  - `Date.Formats.W` ---- [ %Y-%M-%D %w ] ( 2013-07-19 星期四 )
-  - `Date.Formats.E` ---- [ %Y-%M-%D %e ] ( 2013-07-19 Thursday )
+  - `Date.Formats.O` ---- [ Y-M-D ] ( 2013-07-19 )
+  - `Date.Formats.T` ---- [ M/D/y ] ( 07/19/13 )
+  - `Date.Formats.C` ---- [ Y年M月D日 ] ( 2013年07月19日 )
+  - `Date.Formats.F` ---- [ Y-M-D H:m:s ] ( 2013-07-19 22:34:09 )
+  - `Date.Formats.W` ---- [ Y-M-D w ] ( 2013-07-19 星期四 )
+  - `Date.Formats.E` ---- [ Y-M-D e ] ( 2013-07-19 Thursday )
 
 ( 注：以上格式如果不能满足您的需求，可根据 格式标记 符号自由拼装适合自己的格式，您也可以尝试扩展您自己想要的格式标记符号或速记格式。)
